@@ -45,10 +45,6 @@ int main(){
     myObj.beschreibeDich();
     mySecObj.beschreibeDich();
 
-    int meinArray[3];
-    int meinArrayy[3];
-    meinArray=meinArrayy;
-
     return 1;
 
 }

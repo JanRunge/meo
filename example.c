@@ -2,40 +2,20 @@
 
 int main(){
     int zahl=10;
-    int *zeigerZahl =&zahl;
-    printf("zahl: %d \n",zahl);
-    printf("&zahl: %p \n",&zahl);
-    printf("zeigerZahl: %p \n",zeigerZahl);
-    printf("*zeigerZahl: %d \n",*zeigerZahl);
-    printf("--------- \n");
-    *zeigerZahl=20;
+    int *zeigerZahl =&zahl;// es wird ein Zeiger definiert, der auf zahl zeigt.
+    *zeigerZahl=20;//der wert von Zahl wird durch den Zeiger auf 20 gesetzt
 
-    printf("zahl: %d \n",zahl);
-    printf("&zahl: %p \n",&zahl);
-    printf("zeigerZahl: %p \n",zeigerZahl);
-    printf("*zeigerZahl: %d \n",*zeigerZahl);
-
-    funkMitZeigerParam(zeigerZahl);
-    funkMitIntParam(*zeigerZahl);
-
-    printf("zahl: %d \n",zahl);
-    printf("&zahl: %p \n",&zahl);
-    printf("zeigerZahl: %p \n",zeigerZahl);
-    printf("*zeigerZahl: %d \n",*zeigerZahl);
+    funkMitZeigerParam(zeigerZahl);//es wird der Zeiger übergeben (0x29480)
+    //jetzt ist Zahl=34
+    funkMitIntParam(*zeigerZahl);//es wird der wert übergeben(20)
+    //zahl=34
 
     return 1;
 }
 
-void funkMitZeigerParam(int *zeigerParam){
-    printf("--------- \n");
-    printf("*zeigerParam: %d \n",*zeigerParam);
-    printf("zeigerParam: %p \n",zeigerParam);
-    printf("--------- \n");
-    *zeigerParam=34;
+void funkMitZeigerParam(int *zeigerParam){//die Funktion nimmt einen Zeiger an
+    *zeigerParam=34;//der wert der variable, auf die der übergebene Zeiger zeigt, wird auf 34 gesetzt.
 }
 void funkMitIntParam(int zahlParam){
-    printf("2---------2 \n");
-    printf("zahlParam: %d \n",zahlParam);
-    printf("&zahlParam: %p \n",&zahlParam);
-    printf("2---------2 \n");
+    zahlParam=35;//der wert der variable zahlParam wird auf 35 gesetzt. Zahl ist davon unberührt
 }
